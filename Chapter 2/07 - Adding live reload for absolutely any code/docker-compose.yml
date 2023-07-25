@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  echo-server:
+    build: .
+    ports:
+    - "5000:5000"
+    tty: true
+    command:
+      watchmedo auto-restart --patterns "*.py" --recursive --
+      python echo.py
+    volumes:
+      - .:/app/

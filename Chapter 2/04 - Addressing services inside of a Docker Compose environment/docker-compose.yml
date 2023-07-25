@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  echo-server:
+    build: .
+    ports:
+    - "5000:5000"
+    tty: true
+    environment:
+      - DATABASE_HOSTNAME=database
+      - DATABASE_PORT=5432
+      - DATABASE_PASSWORD=password
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
