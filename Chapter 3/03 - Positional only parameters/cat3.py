@@ -1,2 +1,2 @@
-def cat(*items, delim: str):
+def concatenate(*items, delim: str):
     return delim.join(items)

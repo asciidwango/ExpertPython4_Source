@@ -1,6 +1,6 @@
-def cat(a: str, b: str, /, *, delim: str):
-    return delim.join([a, b])
+def concatenate(first: str, second: str, /, *, delim: str):
+    return delim.join([first, second])
 
 
 if __name__ == "__main__":
-    cat("John", "Doe", delim=" ")
+    concatenate("John", "Doe", delim=" ")

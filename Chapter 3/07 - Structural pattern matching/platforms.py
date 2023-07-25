@@ -2,10 +2,12 @@ import sys
 
 match sys.platform:
     case "windows":
-        print("Running on Windows")
+        print("Windowsでの実行")
     case "darwin" :
-        print("Running on macOS")
+        print("macOSでの実行")
     case "linux":
-        print("Running on Linux")
+        print("Linuxでの実行")
     case _:
-        raise NotImplementedError(f"{sys.platform} not supported!")
+        raise NotImplementedError(
+            f"{sys.platform} は、サポートされていません!"
+        )

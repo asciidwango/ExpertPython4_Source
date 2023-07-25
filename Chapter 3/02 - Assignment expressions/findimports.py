@@ -13,7 +13,7 @@ def main():
         print(f"usage: {os.path.basename(__file__)} file-name")
         sys.exit(1)
 
-    with open(sys.argv[1]) as file:
+    with open(sys.argv[1], encoding="utf-8") as file:
         for line in file:
             match = import_re.match(line)
             if match:
