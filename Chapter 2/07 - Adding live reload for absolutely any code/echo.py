@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def echo():
-    print(request.headers)
     return (
         f"METHOD: {request.method}\n"
         f"HEADERS:\n{request.headers}"

@@ -13,5 +13,6 @@ services:
 
   database:
     image: postgres
+    restart: always
     environment:
       POSTGRES_PASSWORD: password

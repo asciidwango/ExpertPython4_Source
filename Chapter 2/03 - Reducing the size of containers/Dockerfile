@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.16
 WORKDIR /app/
 
 RUN apk add --no-cache python3
@@ -10,4 +10,4 @@ RUN apk add --no-cache py3-pip && \
     apk del py3-pip
 
 COPY echo.py .
-CMD ["python", "echo.py"]
+CMD ["python3", "echo.py"]

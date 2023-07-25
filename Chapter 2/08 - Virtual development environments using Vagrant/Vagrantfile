@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box.
   # You can search for boxes at https://vagrantcloud.com/search.
-  # Here we use Trusty version of Ubuntu system for x64 architecture.
-  config.vm.box = "ubuntu/trusty64"
+  # Here we use Jammy version Ubuntu system for x64 architecture.
+  config.vm.box = "ubuntu/jammy64"
 
   # Create a forwarded port mapping which allows access to a specific
   # port within the machine from a port on the host machine and only
@@ -18,5 +18,6 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
+    apt-get install python3.10 -y
   SHELL
 end

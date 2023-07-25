@@ -1,6 +1,5 @@
-# The "slim" versions are sensible starting
-# points for other lightweight Python-based images
-FROM python:3.9-slim
+# "slim" はPythonの軽量イメージの出発点として良い選択です
+FROM python:3.10-slim
 WORKDIR /app/
 
 COPY requirements.txt .
