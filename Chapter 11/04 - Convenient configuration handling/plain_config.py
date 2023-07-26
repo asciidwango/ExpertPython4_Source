@@ -8,5 +8,5 @@ BIND_HOST = os.environ.get("BIND_HOST", "localhost")
 BIND_PORT = int(os.environ.get("BIND_PORT", "80"))
 
 SCHEDULE_INTERVAL = timedelta(
-    seconds=int(os.environ.get("SHEDULE_INTERVAL_SECONDS", 50))
+    seconds=int(os.environ.get("SCHEDULE_INTERVAL_SECONDS", 50))
 )
