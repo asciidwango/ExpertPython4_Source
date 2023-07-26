@@ -1,0 +1,34 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ".:/app/"
+
+  redis:
+    image: redis
+
+  prometheus:
+    image: prom/prometheus:v2.42.0
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+    restart: always
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.42
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "16685:16685"
+      - "16686:16686"
