@@ -1,5 +1,4 @@
 from collections import Counter
-from typing import Dict
 from redis import Redis
 
 from interfaces import ViewsStorageBackend
@@ -12,7 +11,7 @@ class CounterBackend(ViewsStorageBackend):
     def increment(self, key: str):
         self._counter[key] += 1
 
-    def most_common(self, n: int) -> Dict[str, int]:
+    def most_common(self, n: int) -> dict[str, int]:
         return dict(self._counter.most_common(n))
 
     def count_keys(self):
@@ -27,7 +26,7 @@ class RedisBackend(ViewsStorageBackend):
     def increment(self, key: str):
         self._client.zincrby(self._set_name, 1, key)
 
-    def most_common(self, n: int) -> Dict[str, int]:
+    def most_common(self, n: int) -> dict[str, int]:
         return {
             key.decode(): int(value)
             for key, value in self._client.zrange(

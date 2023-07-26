@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import Dict
 
 
 class ViewsStorageBackend(ABC):
@@ -8,5 +7,5 @@ class ViewsStorageBackend(ABC):
         ...
 
     @abstractmethod
-    def most_common(self, n: int) -> Dict[str, int]:
+    def most_common(self, n: int) -> dict[str, int]:
         ...

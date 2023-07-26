@@ -1,5 +1,4 @@
 from collections import Counter
-from typing import Dict
 
 
 class AcmeHashMapFake:
@@ -9,5 +8,5 @@ class AcmeHashMapFake:
     def atomic_incr(self, key: str, amount):
         self._counter[key] += amount
 
-    def top_keys(self, count: int) -> Dict[str, int]:
+    def top_keys(self, count: int) -> dict[str, int]:
         return dict(self._counter.most_common(count))
